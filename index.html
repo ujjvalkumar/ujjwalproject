@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Information</title>
+  <!-- Add Bootstrap CDN links -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./JsBarcode.all.min.js"></script>
+ <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h2 class="text-center">Add Product</h2>
+        <form id="productForm">
+          <div class="form-group">
+            <label for="productImage">Product Image:</label>
+            <input type="file" class="form-control" id="productImage" accept="image/*" required >
+          </div>
+          
+          <div class="form-group">
+            <label for="productId">Product ID:</label>
+            <input type="text" class="form-control" id="productId" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="productName">Product Name:</label>
+            <input type="text" class="form-control" id="productName" name="productName" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="productDescription">Product Description:</label>
+            <textarea class="form-control" id="productDescription" rows="4" required></textarea>
+          </div>
+          
+          <button type="button" class="btn btn-primary" onclick="displayProductInfo()" id="btn_generate">Show Product Information</button>
+        </form>
+        <svg id="barcode"></svg>
+        <div id="output"></div>
+
+        <button id="downloadBtn" class="btn btn-success" style="display: none;" onclick="downloadProductInfo()">Download</button>
+        <button id="saveBtn" class="btn btn-info" style="display: none;" onclick="saveProductInfo()">Save</button>
+        <button id="printBtn" class="btn btn-secondary" style="display: none;" onclick="printProductInfo()">Print</button>
+      </div>
+    </div>
+  </div>
+          
+ 
+
+  <script type="text/javascript">
+      document.getElementById("btn_generate").addEventListener('click', function() {
+      var text = document.getElementById("productId").value;
+      JsBarcode("#barcode", text);
+      });
+  </script>
+
+
+
+  <script src="/script.js">
+    
+  </script>
+</body>
+</html>

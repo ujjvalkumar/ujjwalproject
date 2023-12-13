@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+#productForm {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#output {
+  margin-top: 20px;
+}
+#downloadBtn, #saveBtn, #printBtn {
+  margin-top: 10px;
+}
+.barcode {
+  position: absolute imo !important;
+
+}
